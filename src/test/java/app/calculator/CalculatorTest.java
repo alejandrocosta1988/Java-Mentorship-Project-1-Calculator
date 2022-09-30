@@ -89,4 +89,21 @@ public class CalculatorTest {
         assertEquals(expected, calculator.divide(7, 2.4), TOLERANCE);
     }
 
+    @Test
+    public void testGivenTwoIntegersThenExponentiateReturnsTheExponentiation() {
+        double expected = 8d;
+        assertEquals(expected, calculator.exponentiate(2, 3), TOLERANCE);
+    }
+    @Test
+    public void testGivenTwoDoublesThenExponentiateReturnsTheExponentiation() {
+        double expected = 5.72;
+        assertEquals(expected, calculator.exponentiate(3.2, 1.5), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenAnIntegerAndADoubleThenExponentiateReturnsTheExponentiation() {
+        double expected = 2d;
+        assertEquals(expected, calculator.exponentiate(4, 0.5), TOLERANCE);
+    }
+
 }

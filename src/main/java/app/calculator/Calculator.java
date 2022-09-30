@@ -19,4 +19,8 @@ public class Calculator {
     public double divide(double dividend, double divisor) {
         return dividend / divisor;
     }
+
+    public double exponentiate(double base, double exponent) {
+        return Math.pow(base, exponent);
+    }
 }
