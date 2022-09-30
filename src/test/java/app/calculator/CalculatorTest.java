@@ -70,4 +70,23 @@ public class CalculatorTest {
         double expected = 11.7;
         assertEquals(expected, calculator.multiply(13, 0.9), TOLERANCE);
     }
+
+    @Test
+    public void testGivenTwoIntegersThenDivideReturnsTheDivision() {
+        double expected = 6d;
+        assertEquals(expected, calculator.divide(12, 2), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenTwoDoublesThenDivideReturnsTheDivision() {
+        double expected = 1.68;
+        assertEquals(expected, calculator.divide(3.2, 1.9), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenAnIntegerAndADoubleThenDivideReturnsTheDivision() {
+        double expected = 2.92;
+        assertEquals(expected, calculator.divide(7, 2.4), TOLERANCE);
+    }
+
 }

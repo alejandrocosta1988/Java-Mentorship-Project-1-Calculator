@@ -15,4 +15,8 @@ public class Calculator {
     public double multiply(double firstNumber, double secondNumber) {
         return firstNumber * secondNumber;
     }
+
+    public double divide(double dividend, double divisor) {
+        return dividend / divisor;
+    }
 }
