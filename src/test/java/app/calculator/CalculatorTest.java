@@ -20,19 +20,25 @@ public class CalculatorTest {
     @Test
     public void testGivenTwoIntegersThenAddReturnsTheSum() {
         double expected = 4d;
-        assertEquals(expected, calculator.add(2, 2), TOLERANCE);
+        calculator.add(2);
+        calculator.add(2);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
     @Test
     public void testGivenTwoDoublesThenAddReturnsTheSum() {
         double expected = 6.43;
-        assertEquals(expected, calculator.add(5.41, 1.02), TOLERANCE);
+        calculator.add(5.41);
+        calculator.add(1.02);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
     @Test
     public void testGivenAnIntegerAndADoubleThenAddReturnsTheSum() {
         double expected = 1.5;
-        assertEquals(expected, calculator.add(1, 0.5), TOLERANCE);
+        calculator.add(1);
+        calculator.add(0.5);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
     @Test

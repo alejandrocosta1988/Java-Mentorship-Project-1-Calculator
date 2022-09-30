@@ -4,8 +4,10 @@ import java.math.BigDecimal;
 
 public class Calculator {
 
-    public double add(double firstNumber, double secondNumber) {
-        return firstNumber + secondNumber;
+    private double result = 0d;
+
+    public void add(double number) {
+        result = BasicOperation.add(result, number);
     }
 
     public double subtract(double firstNumber, double secondNumber) {
@@ -22,5 +24,9 @@ public class Calculator {
 
     public double exponentiate(double base, double exponent) {
         return Math.pow(base, exponent);
+    }
+
+    public double getResult() {
+        return result;
     }
 }
