@@ -52,4 +52,22 @@ public class CalculatorTest {
         double expected = 5.1;
         assertEquals(expected, calculator.subtract(7, 1.9), TOLERANCE);
     }
+
+    @Test
+    public void testGivenTwoIntegersThenMultiplyReturnsTheMultiplication() {
+        double expected = 21d;
+        assertEquals(expected, calculator.multiply(3, 7), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenTwoDoublesThenMultiplyReturnsTheMultiplication() {
+        double expected = 0.25;
+        assertEquals(expected, calculator.multiply(0.5, 0.5), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenAnIntegerAndADoubleThenMultiplyReturnsTheMultiplication() {
+        double expected = 11.7;
+        assertEquals(expected, calculator.multiply(13, 0.9), TOLERANCE);
+    }
 }
