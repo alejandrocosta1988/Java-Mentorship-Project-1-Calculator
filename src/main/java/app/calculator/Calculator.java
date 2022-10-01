@@ -1,13 +1,11 @@
 package app.calculator;
 
-import java.math.BigDecimal;
-
 public class Calculator {
 
     private double result = 0d;
 
-    public void add(double number) {
-        result = BasicOperation.add(result, number);
+    public void add(double value) {
+        result = BasicOperation.add(result, value);
     }
 
     public void subtract(double value) {
