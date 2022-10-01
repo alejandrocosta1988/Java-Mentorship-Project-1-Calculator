@@ -20,8 +20,8 @@ public class Calculator {
         result = BasicOperation.divide(result, value);
     }
 
-    public double exponentiate(double base, double exponent) {
-        return Math.pow(base, exponent);
+    public void exponentiate(double value) {
+        result = BasicOperation.exponentiate(result, value);
     }
 
     public double getResult() {

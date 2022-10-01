@@ -17,4 +17,8 @@ public class BasicOperation {
     public static double divide(double dividend, double divisor) {
         return dividend / divisor;
     }
+
+    public static double exponentiate(double base, double exponent) {
+        return Math.pow(base, exponent);
+    }
 }

@@ -58,20 +58,14 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testGivenTwoIntegersThenExponentiateReturnsTheExponentiation() {
-        double expected = 8d;
-        assertEquals(expected, calculator.exponentiate(2, 3), TOLERANCE);
-    }
-    @Test
-    public void testGivenTwoDoublesThenExponentiateReturnsTheExponentiation() {
-        double expected = 5.72;
-        assertEquals(expected, calculator.exponentiate(3.2, 1.5), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenAnIntegerAndADoubleThenExponentiateReturnsTheExponentiation() {
-        double expected = 2d;
-        assertEquals(expected, calculator.exponentiate(4, 0.5), TOLERANCE);
+    public void testAfterConsecutiveCallsToExponentiateGetResultReturnFinalResult() {
+        double expected = 22.63;
+        calculator.add(2);
+        calculator.exponentiate(3);
+        calculator.exponentiate(1.5);
+        calculator.exponentiate(2);
+        calculator.exponentiate(0.5);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
 }
