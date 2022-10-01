@@ -28,9 +28,13 @@ public class BmiCalculatorTest {
         assertEquals(1.73, calculator.getHeight(), TOLERANCE);
     }
 
-    @Test(expected = BmiException.class)
-    public void testGivenANegativeHeightABmiExceptionIsThrown() throws BmiException {
-        calculator.setHeight(-1.2);
+    @Test
+    public void testGivenANegativeHeightABmiExceptionIsThrown() {
+        try {
+            calculator.setHeight(-1.2);
+        } catch(BmiException e) {
+            assertEquals("Height must be positive.", e.getMessage());
+        }
     }
 
 }

@@ -6,7 +6,7 @@ public class BmiCalculator extends Calculator {
 
     public void setHeight(double height) throws BmiException {
         if (height <= 0)
-            throw new BmiException();
+            throw new BmiException("Height must be positive.");
         this.height = height;
     }
 
