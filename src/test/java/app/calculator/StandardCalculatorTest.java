@@ -5,14 +5,19 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class CalculatorTest {
+public class StandardCalculatorTest {
 
-    private Calculator calculator;
-    private final double TOLERANCE = 0.005;
+    private StandardCalculator calculator;
+    private final double TOLERANCE = 0.05;
 
     @Before
     public void createCalculator() {
-        calculator = new Calculator();
+        calculator = new StandardCalculator();
+    }
+
+    @Test
+    public void testCalculatorsAreCreatedWithZeroResult() {
+        assertEquals(0d, calculator.getResult(), TOLERANCE);
     }
 
     @Test

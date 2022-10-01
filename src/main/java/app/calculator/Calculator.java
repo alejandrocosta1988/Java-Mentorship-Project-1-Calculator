@@ -1,30 +1,11 @@
 package app.calculator;
 
-public class Calculator {
+public abstract class Calculator {
 
-    private double result = 0d;
-
-    public void add(double value) {
-        result = BasicOperation.add(result, value);
-    }
-
-    public void subtract(double value) {
-        result = BasicOperation.subtract(result, value);
-    }
-
-    public void multiply(double value) {
-        result = BasicOperation.multiply(result, value);
-    }
-
-    public void divide(double value) {
-        result = BasicOperation.divide(result, value);
-    }
-
-    public void exponentiate(double value) {
-        result = BasicOperation.exponentiate(result, value);
-    }
+    protected double result = 0d;
 
     public double getResult() {
         return result;
     }
+
 }

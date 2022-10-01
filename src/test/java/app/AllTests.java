@@ -1,11 +1,11 @@
 package app;
 
 import app.calculator.BasicOperationTest;
-import app.calculator.CalculatorTest;
+import app.calculator.StandardCalculatorTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ BasicOperationTest.class, CalculatorTest.class })
+@Suite.SuiteClasses({ BasicOperationTest.class, StandardCalculatorTest.class })
 public class AllTests {
 }
