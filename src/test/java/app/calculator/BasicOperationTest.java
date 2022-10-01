@@ -63,4 +63,22 @@ public class BasicOperationTest {
         assertEquals(expected, BasicOperation.multiply(13, 0.9), TOLERANCE);
     }
 
+    @Test
+    public void testGivenTwoIntegersThenDivideReturnsTheDivision() {
+        double expected = 6d;
+        assertEquals(expected, BasicOperation.divide(12, 2), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenTwoDoublesThenDivideReturnsTheDivision() {
+        double expected = 1.68;
+        assertEquals(expected, BasicOperation.divide(3.2, 1.9), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenAnIntegerAndADoubleThenDivideReturnsTheDivision() {
+        double expected = 2.92;
+        assertEquals(expected, BasicOperation.divide(7, 2.4), TOLERANCE);
+    }
+
 }

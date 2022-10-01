@@ -13,4 +13,8 @@ public class BasicOperation {
     public static double multiply(double multiplier, double multiplicand) {
         return multiplier * multiplicand;
     }
+
+    public static double divide(double dividend, double divisor) {
+        return dividend / divisor;
+    }
 }

@@ -47,21 +47,14 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testGivenTwoIntegersThenDivideReturnsTheDivision() {
-        double expected = 6d;
-        assertEquals(expected, calculator.divide(12, 2), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenTwoDoublesThenDivideReturnsTheDivision() {
-        double expected = 1.68;
-        assertEquals(expected, calculator.divide(3.2, 1.9), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenAnIntegerAndADoubleThenDivideReturnsTheDivision() {
-        double expected = 2.92;
-        assertEquals(expected, calculator.divide(7, 2.4), TOLERANCE);
+    public void testAfterConsecutiveCallsToDivideGetResultReturnsFinalResult() {
+        double expected = 3.82;
+        calculator.add(33);
+        calculator.divide(4);
+        calculator.divide(1.2);
+        calculator.divide(2);
+        calculator.divide(0.9);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
     @Test

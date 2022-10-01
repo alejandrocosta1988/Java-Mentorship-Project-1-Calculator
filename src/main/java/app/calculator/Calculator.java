@@ -16,8 +16,8 @@ public class Calculator {
         result = BasicOperation.multiply(result, value);
     }
 
-    public double divide(double dividend, double divisor) {
-        return dividend / divisor;
+    public void divide(double value) {
+        result = BasicOperation.divide(result, value);
     }
 
     public double exponentiate(double base, double exponent) {
