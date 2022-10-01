@@ -68,4 +68,24 @@ public class CalculatorTest {
         assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
+    @Test
+    public void testGivenConsecutiveCallsToDifferentBasicOperationsThenGetResultReturnsTheCumulativeResult() {
+        double expected = 11.06;
+        calculator.add(15);
+        calculator.add(33.7);
+        calculator.subtract(18.4);
+        calculator.multiply(7);
+        calculator.divide(33.4);
+        calculator.exponentiate(1.3);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
+    }
+
+    @Test
+    public void testCalculatorComputesBasicOperationsWithNegativeValues() {
+        double expected = -2d;
+        calculator.add(2);
+        calculator.multiply(-1);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
+    }
+
 }
