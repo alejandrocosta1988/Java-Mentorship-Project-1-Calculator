@@ -18,26 +18,12 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testGivenTwoIntegersThenAddReturnsTheSum() {
-        double expected = 4d;
+    public void testAfterConsecutiveCallsToAddGetResultReturnsTheSum() {
+        double expected = 47.6;
         calculator.add(2);
-        calculator.add(2);
-        assertEquals(expected, calculator.getResult(), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenTwoDoublesThenAddReturnsTheSum() {
-        double expected = 6.43;
-        calculator.add(5.41);
-        calculator.add(1.02);
-        assertEquals(expected, calculator.getResult(), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenAnIntegerAndADoubleThenAddReturnsTheSum() {
-        double expected = 1.5;
-        calculator.add(1);
-        calculator.add(0.5);
+        calculator.add(3.5);
+        calculator.add(33.1);
+        calculator.add(9);
         assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
