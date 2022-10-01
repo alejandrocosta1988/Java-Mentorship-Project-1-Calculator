@@ -10,8 +10,8 @@ public class Calculator {
         result = BasicOperation.add(result, number);
     }
 
-    public double subtract(double firstNumber, double secondNumber) {
-        return firstNumber - secondNumber;
+    public void subtract(double value) {
+        result = BasicOperation.subtract(result, value);
     }
 
     public double multiply(double firstNumber, double secondNumber) {

@@ -6,4 +6,7 @@ public class BasicOperation {
         return firstNumber + secondNumber;
     }
 
+    public static double subtract(double minuend, double subtrahend) {
+        return minuend - subtrahend;
+    }
 }

@@ -28,21 +28,13 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testGivenTwoIntegersThenSubtractReturnsTheSubtraction() {
-        double expected = 5d;
-        assertEquals(expected, calculator.subtract(7, 2), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenTwoDoublesThenSubtractReturnsTheSubtraction() {
-        double expected = 5.1;
-        assertEquals(expected, calculator.subtract(6.9, 1.8), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenAnIntegerAndADoubleThenSubtractReturnsTheSubtraction() {
-        double expected = 5.1;
-        assertEquals(expected, calculator.subtract(7, 1.9), TOLERANCE);
+    public void testAfterConsecutiveCallsToSubtractGetResultReturnsFinalResult() {
+        double expected = 16.1;
+        calculator.add(47.6);
+        calculator.subtract(14);
+        calculator.subtract(6.3);
+        calculator.subtract(11.2);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
     @Test
