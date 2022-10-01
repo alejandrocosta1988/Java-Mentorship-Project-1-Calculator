@@ -9,4 +9,8 @@ public class BasicOperation {
     public static double subtract(double minuend, double subtrahend) {
         return minuend - subtrahend;
     }
+
+    public static double multiply(double multiplier, double multiplicand) {
+        return multiplier * multiplicand;
+    }
 }

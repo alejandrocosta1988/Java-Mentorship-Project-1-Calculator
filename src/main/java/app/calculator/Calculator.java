@@ -14,8 +14,8 @@ public class Calculator {
         result = BasicOperation.subtract(result, value);
     }
 
-    public double multiply(double firstNumber, double secondNumber) {
-        return firstNumber * secondNumber;
+    public void multiply(double value) {
+        result = BasicOperation.multiply(result, value);
     }
 
     public double divide(double dividend, double divisor) {

@@ -45,4 +45,22 @@ public class BasicOperationTest {
         assertEquals(expected, BasicOperation.subtract(7, 1.9), TOLERANCE);
     }
 
+    @Test
+    public void testGivenTwoIntegersThenMultiplyReturnsTheMultiplication() {
+        double expected = 21d;
+        assertEquals(expected, BasicOperation.multiply(3, 7), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenTwoDoublesThenMultiplyReturnsTheMultiplication() {
+        double expected = 0.25;
+        assertEquals(expected, BasicOperation.multiply(0.5, 0.5), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenAnIntegerAndADoubleThenMultiplyReturnsTheMultiplication() {
+        double expected = 11.7;
+        assertEquals(expected, BasicOperation.multiply(13, 0.9), TOLERANCE);
+    }
+
 }

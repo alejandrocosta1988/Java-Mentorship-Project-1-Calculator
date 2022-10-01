@@ -38,21 +38,14 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testGivenTwoIntegersThenMultiplyReturnsTheMultiplication() {
-        double expected = 21d;
-        assertEquals(expected, calculator.multiply(3, 7), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenTwoDoublesThenMultiplyReturnsTheMultiplication() {
-        double expected = 0.25;
-        assertEquals(expected, calculator.multiply(0.5, 0.5), TOLERANCE);
-    }
-
-    @Test
-    public void testGivenAnIntegerAndADoubleThenMultiplyReturnsTheMultiplication() {
-        double expected = 11.7;
-        assertEquals(expected, calculator.multiply(13, 0.9), TOLERANCE);
+    public void testAfterCosecutiveCallsToMultiplyGetResultReturnsFinalResult() {
+        double expected = 76.58;
+        calculator.add(2.3);
+        calculator.multiply(4);
+        calculator.multiply(1.9);
+        calculator.multiply(33.7);
+        calculator.multiply(0.13);
+        assertEquals(expected, calculator.getResult(), TOLERANCE);
     }
 
     @Test
