@@ -7,8 +7,9 @@ import static org.junit.Assert.assertEquals;
 
 public class BmiCalculatorTest {
 
-    private final String INVALID_HEIGHT_MESSAGE = "Informed height must be greater than zero. Invalid value: ";
+    private final String INVALID_MESSAGE = "The value must be positive. Invalid value: ";
     private final double INVALID_HEIGHT_VALUE = -1.2;
+    private final double INVALID_WEIGHT_VALUE = -62.4;
     private final double TOLERANCE = 0.05;
     private BmiCalculator calculator;
 
@@ -31,11 +32,26 @@ public class BmiCalculatorTest {
     }
 
     @Test
-    public void testGivenANegativeHeightABmiExceptionIsThrown() {
+    public void testGivenANegativeHeightABmiExceptionIsThrownWithAppropriateMessage() {
         try {
             calculator.setHeight(INVALID_HEIGHT_VALUE);
         } catch(BmiException e) {
-            assertEquals(INVALID_HEIGHT_MESSAGE + INVALID_HEIGHT_VALUE, e.getMessage());
+            assertEquals(INVALID_MESSAGE + INVALID_HEIGHT_VALUE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void testGivenACalculatorAPositiveWeightCanBeInformed() throws BmiException {
+        calculator.setWeight(64.3);
+        assertEquals(64.3, calculator.getWeight(), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenANegativeWeightABmiExceptionIsThrownWithAppropriateMessage() {
+        try {
+            calculator.setWeight(INVALID_WEIGHT_VALUE);
+        } catch(BmiException e) {
+            assertEquals(INVALID_MESSAGE + INVALID_WEIGHT_VALUE, e.getMessage());
         }
     }
 

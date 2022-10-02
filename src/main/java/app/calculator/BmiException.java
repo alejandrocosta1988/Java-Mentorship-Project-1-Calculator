@@ -2,16 +2,16 @@ package app.calculator;
 
 public class BmiException extends Exception {
 
-    private double invalidHeight;
-    private String invalidHeightMessage = "Informed height must be greater than zero. Invalid value: ";
+    private double invalidValue;
+    private String message = "The value must be positive. Invalid value: ";
 
-    public BmiException(double invalidHeight) {
-        this.invalidHeight = invalidHeight;
+    public BmiException(double invalidValue) {
+        this.invalidValue = invalidValue;
     }
 
     @Override
     public String getMessage() {
-        return invalidHeightMessage + invalidHeight;
+        return message + invalidValue;
     }
 
 }
