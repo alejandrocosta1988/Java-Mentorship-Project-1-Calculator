@@ -6,9 +6,13 @@ public class BmiCalculator extends Calculator {
     private double weight;
 
     public void setHeight(double height) throws BmiException {
-        if (height <= 0)
+        if (!isValid(height))
             throw new BmiException(height);
         this.height = height;
+    }
+
+    private boolean isValid(double value) {
+        return value > 0;
     }
 
     public double getHeight() {
@@ -16,7 +20,7 @@ public class BmiCalculator extends Calculator {
     }
 
     public void setWeight(double weight) throws BmiException {
-        if (weight <= 0)
+        if (!isValid(weight))
             throw new BmiException(weight);
         this.weight = weight;
     }
@@ -26,11 +30,19 @@ public class BmiCalculator extends Calculator {
     }
 
     public double getBmi() throws BmiException {
-        if (height == 0)
-            throw new BmiException(height);
-        if (weight == 0)
-            throw new BmiException(weight);
+        checkInvalidHeight();
+        checkInvalidWeight();
         return weight / Math.pow(height, 2);
+    }
+
+    private void checkInvalidHeight() throws BmiException {
+        if (height <= 0)
+            throw new BmiException(height);
+    }
+
+    private void checkInvalidWeight() throws BmiException {
+        if (weight <= 0)
+            throw new BmiException(weight);
     }
 
 }
