@@ -29,10 +29,10 @@ public class BmiCalculator extends Calculator {
         return weight;
     }
 
-    public double getBmi() throws BmiException {
+    public void calculateBmi() throws BmiException {
         checkInvalidHeight();
         checkInvalidWeight();
-        return weight / Math.pow(height, 2);
+        result = weight / Math.pow(height, 2);
     }
 
     private void checkInvalidHeight() throws BmiException {

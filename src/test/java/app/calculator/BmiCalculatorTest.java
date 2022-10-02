@@ -56,22 +56,23 @@ public class BmiCalculatorTest {
     }
 
     @Test
-    public void testGivenAValidWeightAndHeightThenGetBmiReturnsTheBmi() throws BmiException {
+    public void testGivenAValidWeightAndHeightThenCalculateBmiStoresBmiInTheResult() throws BmiException {
         calculator.setWeight(64.2);
         calculator.setHeight(1.73);
-        assertEquals(21.45, calculator.getBmi(), TOLERANCE);
+        calculator.calculateBmi();
+        assertEquals(21.45, calculator.getResult(), TOLERANCE);
     }
 
     @Test(expected = BmiException.class)
-    public void testGivenNoHeightThenGetBmiThrowsBmiException() throws BmiException {
+    public void testGivenNoHeightThenCalculateBmiThrowsBmiException() throws BmiException {
         calculator.setWeight(64.2);
-        calculator.getBmi();
+        calculator.calculateBmi();
     }
 
     @Test(expected = BmiException.class)
-    public void testGivenNoWeightThenGetBmiThrowsBmiException() throws BmiException {
+    public void testGivenNoWeightThenCalculateBmiThrowsBmiException() throws BmiException {
         calculator.setHeight(1.73);
-        calculator.getBmi();
+        calculator.calculateBmi();
     }
 
 }
