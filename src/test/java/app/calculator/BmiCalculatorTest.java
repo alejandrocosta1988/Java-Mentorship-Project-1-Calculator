@@ -55,4 +55,23 @@ public class BmiCalculatorTest {
         }
     }
 
+    @Test
+    public void testGivenAValidWeightAndHeightThenGetBmiReturnsTheBmi() throws BmiException {
+        calculator.setWeight(64.2);
+        calculator.setHeight(1.73);
+        assertEquals(21.45, calculator.getBmi(), TOLERANCE);
+    }
+
+    @Test(expected = BmiException.class)
+    public void testGivenNoHeightThenGetBmiThrowsBmiException() throws BmiException {
+        calculator.setWeight(64.2);
+        calculator.getBmi();
+    }
+
+    @Test(expected = BmiException.class)
+    public void testGivenNoWeightThenGetBmiThrowsBmiException() throws BmiException {
+        calculator.setHeight(1.73);
+        calculator.getBmi();
+    }
+
 }

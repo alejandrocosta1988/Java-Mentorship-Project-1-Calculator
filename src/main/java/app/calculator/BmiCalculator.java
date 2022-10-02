@@ -24,4 +24,13 @@ public class BmiCalculator extends Calculator {
     public double getWeight() {
         return weight;
     }
+
+    public double getBmi() throws BmiException {
+        if (height == 0)
+            throw new BmiException(height);
+        if (weight == 0)
+            throw new BmiException(weight);
+        return weight / Math.pow(height, 2);
+    }
+
 }
