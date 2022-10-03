@@ -21,4 +21,9 @@ public class CircleTest {
         assertEquals(19.635, circle.calculateArea(), TOLERANCE);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testGivenANegativeRadiusThenTheCircleCannotBeCreated() {
+        Circle impossibleCircle = new Circle(-3.4);
+    }
+
 }
