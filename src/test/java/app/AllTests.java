@@ -7,6 +7,7 @@ import app.calculator.StandardCalculatorTest;
 import app.shapes.CircleTest;
 import app.shapes.RectangleTest;
 import app.shapes.SquareTest;
+import app.util.MessageUtilTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -14,6 +15,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         BasicOperationTest.class, StandardCalculatorTest.class, BmiCalculatorTest.class,
         AreaCalculatorTest.class,
-        CircleTest.class, SquareTest.class, RectangleTest.class })
+        CircleTest.class, SquareTest.class, RectangleTest.class,
+        MessageUtilTest.class
+})
 public class AllTests {
 }
