@@ -3,18 +3,33 @@ package app;
 import app.messages.Menu;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainApp {
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println(Menu.MAIN_MENU);
-        System.out.print(Menu.printPrompt());
-        Scanner in = new Scanner(System.in);
-        int userOption = in.nextInt();
+        Menu menu = new Menu();
+        boolean run = true;
 
-        System.out.println(userOption);
+        while(run) {
+            System.out.println(menu.printMainMenu());
+            System.out.print(menu.printPrompt());
+
+            Scanner in = new Scanner(System.in);
+
+            try {
+                int userOption = in.nextInt();
+                if (userOption > 3 || userOption < 1)
+                    System.out.println("Selected option does not exist. Choose between 1 and 3.");
+            } catch (InputMismatchException e) {
+                System.out.println("You need to use a number from 1 to 3.");
+            }
+
+
+        }
+
     }
 
 }
