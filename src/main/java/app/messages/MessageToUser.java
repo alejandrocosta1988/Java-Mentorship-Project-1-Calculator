@@ -1,12 +1,18 @@
 package app.messages;
 
+import app.util.MessageUtil;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class MessageToUser {
 
+    private Menu menu = new Menu();
     private Map<Integer, String> mainMenuOptions;
     private String selection = "Selected option: ";
+
+    private String askForWeight = "Enter weight value in kilogram:";
+    private String askForHeight = "Enter height value in meters:";
 
     public String printSelectedOption(int choice) {
         checkMainMenuOptions();
@@ -22,4 +28,22 @@ public class MessageToUser {
         }
     }
 
+    public String askForWeight() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(askForWeight);
+        appendPrompt(builder);
+        return builder.toString();
+    }
+
+    private void appendPrompt(StringBuilder builder) {
+        builder.append(MessageUtil.LINE_BREAK);
+        builder.append(menu.printPrompt());
+    }
+
+    public String askForHeight() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(askForHeight);
+        appendPrompt(builder);
+        return builder.toString();
+    }
 }
