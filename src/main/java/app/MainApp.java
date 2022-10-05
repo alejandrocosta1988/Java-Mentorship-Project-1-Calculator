@@ -1,9 +1,6 @@
 package app;
 
-import app.calculator.AreaCalculator;
-import app.calculator.BmiCalculator;
-import app.calculator.Calculator;
-import app.calculator.StandardCalculator;
+import app.calculator.*;
 import app.messages.Menu;
 import app.messages.MessageToUser;
 
@@ -17,7 +14,6 @@ public class MainApp {
 
         Menu menu = new Menu();
         MessageToUser messageToUser = new MessageToUser();
-        Calculator calculator;
 
         boolean run = true;
 
@@ -35,17 +31,28 @@ public class MainApp {
                     System.out.println("Selected option does not exist. Choose between 1 and 3.");
 
                 if (userOption == 1) {
-                    calculator = new StandardCalculator();
+                    Calculator calculator = new StandardCalculator();
                     System.out.println(messageToUser.printSelectedOption(userOption));
                 }
 
                 if (userOption == 2) {
-                    calculator = new BmiCalculator();
+                    BmiCalculator calculator = new BmiCalculator();
                     System.out.println(messageToUser.printSelectedOption(userOption));
+
+                    try {
+                        System.out.print(messageToUser.askForWeight());
+                        calculator.setWeight(in.nextDouble());
+                        System.out.print(messageToUser.askForHeight());
+                        calculator.setHeight(in.nextDouble());
+                        calculator.calculateBmi();
+                        System.out.println(calculator.getResult());
+                    } catch (BmiException e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
 
                 if (userOption == 3) {
-                    calculator = new AreaCalculator();
+                    AreaCalculator calculator = new AreaCalculator();
                     System.out.println(messageToUser.printSelectedOption(userOption));
                 }
 
