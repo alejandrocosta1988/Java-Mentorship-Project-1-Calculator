@@ -1,6 +1,5 @@
 package app.calculator;
 
-import app.shapes.Circle;
 import app.shapes.GeometricShape;
 
 public class AreaCalculator extends Calculator {
