@@ -5,6 +5,7 @@ import app.calculator.BasicOperationTest;
 import app.calculator.BmiCalculatorTest;
 import app.calculator.StandardCalculatorTest;
 import app.messages.MenuTest;
+import app.messages.MessageToUserTest;
 import app.shapes.CircleTest;
 import app.shapes.RectangleTest;
 import app.shapes.SquareTest;
@@ -18,7 +19,7 @@ import org.junit.runners.Suite;
         AreaCalculatorTest.class,
         CircleTest.class, SquareTest.class, RectangleTest.class,
         MessageUtilTest.class,
-        MenuTest.class
+        MenuTest.class, MessageToUserTest.class
 })
 public class AllTests {
 }
