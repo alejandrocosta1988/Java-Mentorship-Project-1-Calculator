@@ -17,9 +17,8 @@ public class AreaCalculator extends Calculator {
 
     @Override
     public double getResult() {
-        if (shape == null) {
+        if (shape == null)
             return 0;
-        }
         return shape.calculateArea();
     }
 }
