@@ -1,16 +1,17 @@
 package app.calculator;
 
 import app.shapes.Circle;
+import app.shapes.GeometricShape;
 
 public class AreaCalculator extends Calculator {
 
-    private Circle shape;
+    private GeometricShape shape;
 
-    public void changeShape(Circle shape) {
+    public void changeShape(GeometricShape shape) {
         this.shape = shape;
     }
 
-    public Circle getShape() {
+    public GeometricShape getShape() {
         return shape;
     }
 
