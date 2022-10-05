@@ -1,6 +1,7 @@
 package app.shapes;
 
-public class Circle {
+public class Circle implements GeometricShape {
+
     private double radius;
 
     public Circle(double radius) {
@@ -10,6 +11,7 @@ public class Circle {
         this.radius = radius;
     }
 
+    @Override
     public double calculateArea() {
         return Math.PI * Math.pow(radius, 2);
     }

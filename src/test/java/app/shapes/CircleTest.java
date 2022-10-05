@@ -9,7 +9,7 @@ public class CircleTest {
 
     private final double RADIUS = 2.5;
     private final double TOLERANCE = 0.05;
-    private Circle circle;
+    private GeometricShape circle;
 
     @Before
     public void createCircle() {
