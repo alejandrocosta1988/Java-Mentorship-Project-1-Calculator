@@ -2,6 +2,7 @@ package app.calculator;
 
 import app.shapes.Circle;
 import app.shapes.GeometricShape;
+import app.shapes.Rectangle;
 import app.shapes.Square;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,8 +13,9 @@ import static org.junit.Assert.assertNull;
 public class AreaCalculatorTest {
 
     private AreaCalculator calculator;
-    private Circle circle;
+    private GeometricShape circle;
     private GeometricShape square;
+    private GeometricShape rectangle;
     private final double TOLERANCE = 0.05;
 
     @Before
@@ -25,6 +27,7 @@ public class AreaCalculatorTest {
     public void createShapes() {
         circle = new Circle(2.5);
         square = new Square(2.5);
+        rectangle = new Rectangle(3.2, 2.3);
     }
 
     @Test
@@ -50,6 +53,12 @@ public class AreaCalculatorTest {
     public void testGivenASquareThenGetResultReturnsTheAreaOfTheSquare() {
         calculator.changeShape(square);
         assertEquals(6.25, calculator.getResult(), TOLERANCE);
+    }
+
+    @Test
+    public void testGivenARectangleThenGetResultReturnsTheAreaOfTheRectangle() {
+        calculator.changeShape(rectangle);
+        assertEquals(7.36, calculator.getResult(), TOLERANCE);
     }
 
 }
