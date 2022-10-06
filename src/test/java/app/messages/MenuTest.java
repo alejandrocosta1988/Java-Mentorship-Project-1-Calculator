@@ -8,10 +8,10 @@ import static org.junit.Assert.assertEquals;
 public class MenuTest {
 
     private Menu menu = new Menu();
-    private String prompt = "> ";
 
     @Test
     public void testReturnsPromptToUser() {
+        String prompt = "> ";
         assertEquals(prompt, menu.printPrompt());
     }
 

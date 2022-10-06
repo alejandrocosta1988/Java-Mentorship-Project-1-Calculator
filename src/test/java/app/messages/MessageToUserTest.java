@@ -44,4 +44,12 @@ public class MessageToUserTest {
         String prompt = "> ";
         assertEquals(askForHeight + MessageUtil.LINE_BREAK + prompt, messages.askForHeight());
     }
+
+    @Test
+    public void testPrintsBmiResultToUser() {
+        double result = 21.4637259283748;
+        String resultMessage = "BMI: 21.46";
+        assertEquals(resultMessage, messages.printBmiResult(result));
+    }
+
 }

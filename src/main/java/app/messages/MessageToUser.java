@@ -2,6 +2,8 @@ package app.messages;
 
 import app.util.MessageUtil;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,5 +47,10 @@ public class MessageToUser {
         builder.append(askForHeight);
         appendPrompt(builder);
         return builder.toString();
+    }
+
+    public String printBmiResult(double bmiValue) {
+        BigDecimal formattedBmi = new BigDecimal(bmiValue);
+        return "BMI: " + formattedBmi.setScale(2, RoundingMode.HALF_EVEN);
     }
 }
