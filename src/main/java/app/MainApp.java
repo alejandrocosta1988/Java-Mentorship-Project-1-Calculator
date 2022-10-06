@@ -45,7 +45,8 @@ public class MainApp {
                         System.out.print(messageToUser.askForHeight());
                         calculator.setHeight(in.nextDouble());
                         calculator.calculateBmi();
-                        System.out.println(calculator.getResult());
+                        double bmiResult = calculator.getResult();
+                        System.out.println(messageToUser.printBmiResult(bmiResult));
                     } catch (BmiException e) {
                         System.out.println(e.getMessage());
                     }
