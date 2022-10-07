@@ -70,7 +70,11 @@ public class MessageToUser {
             responseBuilder.append("Your BMI is in the underweight range.");
             return;
         }
-        if (bmiValue < 25)
+        if (bmiValue < 25) {
             responseBuilder.append("Your BMI is in the healthy weight range.");
+            return;
+        }
+        if (bmiValue < 29.9)
+            responseBuilder.append("Your BMI is in the overweight range.");
     }
 }

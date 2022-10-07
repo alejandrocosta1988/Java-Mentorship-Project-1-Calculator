@@ -61,4 +61,12 @@ public class MessageToUserTest {
         assertEquals(resultMessage, messages.printBmiResult(result));
     }
 
+    @Test
+    public void testPrintsOverweightBmiResultToUser() {
+        double result = 27.73524;
+        String resultMessage = "BMI: 27.74" + MessageUtil.LINE_BREAK +
+                "Your BMI is in the overweight range.";
+        assertEquals(resultMessage, messages.printBmiResult(result));
+    }
+
 }
