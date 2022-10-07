@@ -11,10 +11,8 @@ public class MessageToUser {
 
     private Menu menu = new Menu();
     private Map<Integer, String> mainMenuOptions;
-    private BmiMessage bmiMessage;
+    private BmiMessage bmiMessage = new BmiMessage();
     private String selection = "Selected option: ";
-    private String askForWeight = "Enter weight value in kilogram:";
-    private String askForHeight = "Enter height value in meters:";
 
     public String printSelectedOption(int choice) {
         checkMainMenuOptions();
@@ -32,7 +30,7 @@ public class MessageToUser {
 
     public String askForWeight() {
         StringBuilder builder = new StringBuilder();
-        builder.append(askForWeight);
+        builder.append(bmiMessage.askForWeight());
         appendPrompt(builder);
         return builder.toString();
     }
@@ -44,23 +42,16 @@ public class MessageToUser {
 
     public String askForHeight() {
         StringBuilder builder = new StringBuilder();
-        builder.append(askForHeight);
+        builder.append(bmiMessage.askForHeight());
         appendPrompt(builder);
         return builder.toString();
     }
 
     public String printBmiResult(double bmiValue) {
-        initializeBmiMessage();
         StringBuilder responseBuilder = new StringBuilder();
         appendBmiValueToResponseBuilder(responseBuilder, bmiValue);
         appendBmiInterpretationToResponse(responseBuilder, bmiValue);
         return responseBuilder.toString();
-    }
-
-    private void initializeBmiMessage() {
-        if (bmiMessage == null) {
-            bmiMessage = new BmiMessage();
-        }
     }
 
     private void appendBmiValueToResponseBuilder(StringBuilder responseBuilder, double bmiValue) {

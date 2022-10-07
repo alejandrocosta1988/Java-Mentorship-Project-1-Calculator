@@ -8,6 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class BmiMessageTest {
 
     private BmiMessage bmiMessage;
+    private final String ASK_WEIGHT = "Enter weight value in kilogram:";
+    private final String ASK_HEIGHT = "Enter height value in meters:";
     private final String UNDERWEIGHT_MESSAGE = "Your BMI is in the underweight range.";
     private final String HEALTHY_WEIGHT_MESSAGE = "Your BMI is in the healthy weight range.";
     private final String OVERWEIGHT_MESSAGE = "Your BMI is in the overweight range.";
@@ -16,6 +18,15 @@ public class BmiMessageTest {
     @Before
     public void createBmiMessages() {
         bmiMessage = new BmiMessage();
+    }
+
+    @Test
+    public void testGivenTheNeedForWeightInputThenAskForWeightReturnsProperMessage() {
+        assertEquals(ASK_WEIGHT, bmiMessage.askForWeight());
+    }
+    @Test
+    public void testGivenTheNeedForHeightInputThenAskForHeightReturnsProperMessage() {
+        assertEquals(ASK_HEIGHT, bmiMessage.askForHeight());
     }
 
     @Test
