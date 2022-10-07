@@ -32,6 +32,13 @@ public class MessageToUserTest {
     }
 
     @Test
+    public void testWhenStandardCalculatorIsSelectedThenAskForNumber() {
+        String askForNumber = "Enter a number:";
+        String prompt = "> ";
+        assertEquals(askForNumber + MessageUtil.LINE_BREAK + prompt, messages.askForNumber());
+    }
+
+    @Test
     public void testWhenBmiCalculatorIsSelectedThenAskForWeight() {
         String askForWeight = "Enter weight value in kilogram:";
         String prompt = "> ";

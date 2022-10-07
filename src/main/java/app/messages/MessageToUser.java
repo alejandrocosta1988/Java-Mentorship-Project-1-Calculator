@@ -13,6 +13,7 @@ public class MessageToUser {
     private Map<Integer, String> mainMenuOptions;
     private BmiMessage bmiMessage = new BmiMessage();
     private String selection = "Selected option: ";
+    private String askForNumber = "Enter a number:";
 
     public String printSelectedOption(int choice) {
         checkMainMenuOptions();
@@ -28,9 +29,9 @@ public class MessageToUser {
         }
     }
 
-    public String askForWeight() {
+    public String askForNumber() {
         StringBuilder builder = new StringBuilder();
-        builder.append(bmiMessage.askForWeight());
+        builder.append(askForNumber);
         appendPrompt(builder);
         return builder.toString();
     }
@@ -38,6 +39,13 @@ public class MessageToUser {
     private void appendPrompt(StringBuilder builder) {
         builder.append(MessageUtil.LINE_BREAK);
         builder.append(menu.printPrompt());
+    }
+
+    public String askForWeight() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(bmiMessage.askForWeight());
+        appendPrompt(builder);
+        return builder.toString();
     }
 
     public String askForHeight() {
@@ -68,4 +76,6 @@ public class MessageToUser {
         bmiMessage.setResult(bmiValue);
         responseBuilder.append(bmiMessage.getInterpretation());
     }
+
+
 }

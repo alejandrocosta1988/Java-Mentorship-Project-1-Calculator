@@ -31,8 +31,10 @@ public class MainApp {
                     System.out.println("Selected option does not exist. Choose between 1 and 3.");
 
                 if (userOption == 1) {
-                    Calculator calculator = new StandardCalculator();
+                    StandardCalculator calculator = new StandardCalculator();
                     System.out.println(messageToUser.printSelectedOption(userOption));
+                    System.out.println(messageToUser.askForNumber());
+                    calculator.add(in.nextDouble());
                 }
 
                 if (userOption == 2) {
