@@ -12,7 +12,6 @@ public class MessageToUser {
     private Menu menu = new Menu();
     private Map<Integer, String> mainMenuOptions;
     private String selection = "Selected option: ";
-
     private String askForWeight = "Enter weight value in kilogram:";
     private String askForHeight = "Enter height value in meters:";
 
@@ -50,7 +49,24 @@ public class MessageToUser {
     }
 
     public String printBmiResult(double bmiValue) {
+        StringBuilder responseBuilder = new StringBuilder();
+        appendBmiValueToResponseBuilder(responseBuilder, bmiValue);
+        appendBmiInterpretationToResponse(responseBuilder, bmiValue);
+        return responseBuilder.toString();
+    }
+
+    private void appendBmiValueToResponseBuilder(StringBuilder responseBuilder, double bmiValue) {
+        responseBuilder.append("BMI: " + formatBmiValue(bmiValue));
+        responseBuilder.append(MessageUtil.LINE_BREAK);
+    }
+
+    private String formatBmiValue(double bmiValue) {
         BigDecimal formattedBmi = new BigDecimal(bmiValue);
-        return "BMI: " + formattedBmi.setScale(2, RoundingMode.HALF_EVEN);
+        return formattedBmi.setScale(2, RoundingMode.HALF_EVEN).toString();
+    }
+
+    private void appendBmiInterpretationToResponse(StringBuilder responseBuilder, double bmiValue) {
+        if (bmiValue < 25)
+            responseBuilder.append("Your BMI is in the healthy weight range.");
     }
 }

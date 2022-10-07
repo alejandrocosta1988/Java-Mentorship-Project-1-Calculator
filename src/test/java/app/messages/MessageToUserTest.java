@@ -46,9 +46,10 @@ public class MessageToUserTest {
     }
 
     @Test
-    public void testPrintsBmiResultToUser() {
+    public void testPrintsHealthyWeightBmiResultToUser() {
         double result = 21.4637259283748;
-        String resultMessage = "BMI: 21.46";
+        String resultMessage = "BMI: 21.46" + MessageUtil.LINE_BREAK +
+                "Your BMI is in the healthy weight range.";
         assertEquals(resultMessage, messages.printBmiResult(result));
     }
 
