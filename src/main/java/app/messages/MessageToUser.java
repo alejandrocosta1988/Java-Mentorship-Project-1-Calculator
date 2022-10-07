@@ -11,6 +11,7 @@ public class MessageToUser {
 
     private Menu menu = new Menu();
     private Map<Integer, String> mainMenuOptions;
+    private BmiMessage bmiMessage;
     private String selection = "Selected option: ";
     private String askForWeight = "Enter weight value in kilogram:";
     private String askForHeight = "Enter height value in meters:";
@@ -49,10 +50,17 @@ public class MessageToUser {
     }
 
     public String printBmiResult(double bmiValue) {
+        initializeBmiMessage();
         StringBuilder responseBuilder = new StringBuilder();
         appendBmiValueToResponseBuilder(responseBuilder, bmiValue);
         appendBmiInterpretationToResponse(responseBuilder, bmiValue);
         return responseBuilder.toString();
+    }
+
+    private void initializeBmiMessage() {
+        if (bmiMessage == null) {
+            bmiMessage = new BmiMessage();
+        }
     }
 
     private void appendBmiValueToResponseBuilder(StringBuilder responseBuilder, double bmiValue) {
@@ -66,19 +74,7 @@ public class MessageToUser {
     }
 
     private void appendBmiInterpretationToResponse(StringBuilder responseBuilder, double bmiValue) {
-        if (bmiValue < 18.5) {
-            responseBuilder.append("Your BMI is in the underweight range.");
-            return;
-        }
-        if (bmiValue < 25) {
-            responseBuilder.append("Your BMI is in the healthy weight range.");
-            return;
-        }
-        if (bmiValue < 29.9) {
-            responseBuilder.append("Your BMI is in the overweight range.");
-            return;
-        }
-        if (bmiValue >= 29.9)
-            responseBuilder.append("Your BMI is in the obese range.");
+        bmiMessage.setResult(bmiValue);
+        responseBuilder.append(bmiMessage.getInterpretation());
     }
 }
