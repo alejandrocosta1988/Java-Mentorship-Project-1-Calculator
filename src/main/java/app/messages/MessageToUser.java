@@ -66,6 +66,10 @@ public class MessageToUser {
     }
 
     private void appendBmiInterpretationToResponse(StringBuilder responseBuilder, double bmiValue) {
+        if (bmiValue < 18.5) {
+            responseBuilder.append("Your BMI is in the underweight range.");
+            return;
+        }
         if (bmiValue < 25)
             responseBuilder.append("Your BMI is in the healthy weight range.");
     }
