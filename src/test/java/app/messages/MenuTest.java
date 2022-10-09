@@ -24,4 +24,15 @@ public class MenuTest {
         assertEquals(mainMenu, menu.printMainMenu());
     }
 
+    @Test
+    public void testReturnsStandardCalculatorMenu() {
+        String standardCalculatorMenu = "Select operation:" + MessageUtil.LINE_BREAK +
+                "1 - Add" + MessageUtil.LINE_BREAK +
+                "2 - Subtract" + MessageUtil.LINE_BREAK +
+                "3 - Multiply" + MessageUtil.LINE_BREAK +
+                "4 - Divide" + MessageUtil.LINE_BREAK +
+                "5 - Exponentiation" + MessageUtil.LINE_BREAK;
+        assertEquals(standardCalculatorMenu, menu.getStandardCalculatorMenu());
+    }
+
 }
