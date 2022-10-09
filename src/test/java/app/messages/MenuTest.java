@@ -31,8 +31,17 @@ public class MenuTest {
                 "2 - Subtract" + MessageUtil.LINE_BREAK +
                 "3 - Multiply" + MessageUtil.LINE_BREAK +
                 "4 - Divide" + MessageUtil.LINE_BREAK +
-                "5 - Exponentiation" + MessageUtil.LINE_BREAK;
+                "5 - Exponentiation";
         assertEquals(standardCalculatorMenu, menu.getStandardCalculatorMenu());
+    }
+
+    @Test
+    public void testReturnsAreaCalculatorMenu() {
+        String areaCalculatorMenu = "Select geometric shape:" + MessageUtil.LINE_BREAK +
+                "1 - Circle" + MessageUtil.LINE_BREAK +
+                "2 - Square" + MessageUtil.LINE_BREAK +
+                "3 - Rectangle";
+        assertEquals(areaCalculatorMenu, menu.getAreaCalculatorMenu());
     }
 
 }

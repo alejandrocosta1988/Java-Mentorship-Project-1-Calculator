@@ -91,6 +91,10 @@ public class MainApp {
                 if (userOption == 3) {
                     AreaCalculator calculator = new AreaCalculator();
                     System.out.println(messageToUser.printSelectedOption(userOption));
+                    System.out.println(menu.getAreaCalculatorMenu());
+                    System.out.print(menu.printPrompt());
+                    int userAreaCalculatorOption = in.nextInt();
+
                 }
 
             } catch (InputMismatchException e) {

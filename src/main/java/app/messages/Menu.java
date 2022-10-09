@@ -14,7 +14,12 @@ public class Menu {
             "2 - Subtract" + MessageUtil.LINE_BREAK +
             "3 - Multiply" + MessageUtil.LINE_BREAK +
             "4 - Divide" + MessageUtil.LINE_BREAK +
-            "5 - Exponentiation" + MessageUtil.LINE_BREAK;
+            "5 - Exponentiation";
+
+    private final String AREA_CALCALCULATOR_MENU = "Select geometric shape:" + MessageUtil.LINE_BREAK +
+            "1 - Circle" + MessageUtil.LINE_BREAK +
+            "2 - Square" + MessageUtil.LINE_BREAK +
+            "3 - Rectangle";
 
     private final String PROMPT = "> ";
 
@@ -28,5 +33,9 @@ public class Menu {
 
     public String getStandardCalculatorMenu() {
         return STANDARD_CALCULATOR_MENU;
+    }
+
+    public String getAreaCalculatorMenu() {
+        return AREA_CALCALCULATOR_MENU;
     }
 }
