@@ -33,8 +33,42 @@ public class MainApp {
                 if (userOption == 1) {
                     StandardCalculator calculator = new StandardCalculator();
                     System.out.println(messageToUser.printSelectedOption(userOption));
-                    System.out.println(messageToUser.askForNumber());
+                    System.out.print(messageToUser.askForNumber());
                     calculator.add(in.nextDouble());
+                    System.out.println(menu.getStandardCalculatorMenu());
+                    System.out.print(menu.printPrompt());
+                    int userOperationOption = in.nextInt();
+
+                    if (userOperationOption == 1) {
+                        System.out.print(messageToUser.askForNumber());
+                        calculator.add(in.nextDouble());
+                        System.out.println(calculator.getResult());
+                    }
+
+                    if (userOperationOption == 2) {
+                        System.out.print(messageToUser.askForNumber());
+                        calculator.subtract(in.nextDouble());
+                        System.out.println(calculator.getResult());
+                    }
+
+                    if (userOperationOption == 3) {
+                        System.out.print(messageToUser.askForNumber());
+                        calculator.multiply(in.nextDouble());
+                        System.out.println(calculator.getResult());
+                    }
+
+                    if (userOperationOption == 4) {
+                        System.out.print(messageToUser.askForNumber());
+                        calculator.divide(in.nextDouble());
+                        System.out.println(calculator.getResult());
+                    }
+
+                    if (userOperationOption == 5) {
+                        System.out.print(messageToUser.askForNumber());
+                        calculator.exponentiate(in.nextDouble());
+                        System.out.println(calculator.getResult());
+                    }
+
                 }
 
                 if (userOption == 2) {
