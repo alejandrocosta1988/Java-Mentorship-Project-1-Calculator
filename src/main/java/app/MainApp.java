@@ -4,6 +4,9 @@ import app.calculator.*;
 import app.messages.Menu;
 import app.messages.MessageToUser;
 import app.shapes.Circle;
+import app.shapes.GeometricShape;
+import app.shapes.Rectangle;
+import app.shapes.Square;
 
 import java.awt.*;
 import java.io.IOException;
@@ -92,14 +95,36 @@ public class MainApp {
 
                 if (userOption == 3) {
                     AreaCalculator calculator = new AreaCalculator();
-                    Shape userShape;
+                    GeometricShape userShape;
                     System.out.println(messageToUser.printSelectedOption(userOption));
                     System.out.println(menu.getAreaCalculatorMenu());
                     System.out.print(menu.printPrompt());
                     int userAreaCalculatorOption = in.nextInt();
 
                     if (userAreaCalculatorOption == 1) {
-                        System.out.println(messageToUser.askForRadius());
+                        System.out.print(messageToUser.askForRadius());
+                        double radius = in.nextDouble();
+                        userShape = new Circle(radius);
+                        calculator.changeShape(userShape);
+                        System.out.println(calculator.getResult());
+                    }
+
+                    if (userAreaCalculatorOption == 2) {
+                        System.out.print(messageToUser.askForSideLength());
+                        double userSideLength = in.nextDouble();
+                        userShape = new Square(userSideLength);
+                        calculator.changeShape(userShape);
+                        System.out.println(calculator.getResult());
+                    }
+
+                    if (userAreaCalculatorOption == 3) {
+                        System.out.print(messageToUser.askForLength());
+                        double userLength = in.nextDouble();
+                        System.out.print(messageToUser.askForWidth());
+                        double userWidth = in.nextDouble();
+                        userShape = new Rectangle(userLength, userWidth);
+                        calculator.changeShape(userShape);
+                        System.out.println(calculator.getResult());
                     }
 
                 }
