@@ -110,6 +110,9 @@ public class MainApp {
                             System.out.println(calculator.getResult());
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
+                        } catch (InputMismatchException e) {
+                            System.out.println("You need to provide numbers.");
+                            continue;
                         }
                     }
 
@@ -122,6 +125,9 @@ public class MainApp {
                             System.out.println(calculator.getResult());
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
+                        } catch (InputMismatchException e) {
+                            System.out.println("You need to provide numbers.");
+                            continue;
                         }
                     }
 
@@ -136,6 +142,9 @@ public class MainApp {
                             System.out.println(calculator.getResult());
                         } catch (IllegalArgumentException e) {
                             System.out.println(e.getMessage());
+                        } catch (InputMismatchException e) {
+                            System.out.println("You need to provide numbers.");
+                            continue;
                         }
                     }
 
