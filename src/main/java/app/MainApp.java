@@ -1,6 +1,9 @@
 package app;
 
-import app.calculator.*;
+import app.calculator.AreaCalculator;
+import app.calculator.BmiCalculator;
+import app.calculator.BmiException;
+import app.calculator.StandardCalculator;
 import app.messages.Menu;
 import app.messages.MessageToUser;
 import app.shapes.Circle;
@@ -8,7 +11,6 @@ import app.shapes.GeometricShape;
 import app.shapes.Rectangle;
 import app.shapes.Square;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -158,7 +160,6 @@ public class MainApp {
             } catch (InputMismatchException e) {
                 System.out.println("You need to use a number from 1 to 3.");
             }
-
 
         } //while
 
