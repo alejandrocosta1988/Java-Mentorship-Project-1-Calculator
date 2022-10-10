@@ -84,4 +84,36 @@ public class MessageToUserTest {
         assertEquals(resultMessage, messages.printBmiResult(result));
     }
 
+    @Test
+    public void testWhenCircleIsSelectedThenAskForTheRadius() {
+        String prompt = "> ";
+        String ask = "Enter the radius of the circle:";
+        String result = ask + MessageUtil.LINE_BREAK + prompt;
+        assertEquals(result, messages.askForRadius());
+    }
+
+    @Test
+    public void testWhenSquareIsSelectedThenAskForTheLength() {
+        String prompt = "> ";
+        String ask = "Enter the length of the side of the square:";
+        String result = ask + MessageUtil.LINE_BREAK + prompt;
+        assertEquals(result, messages.askForSideLength());
+    }
+
+    @Test
+    public void testWhenRectangleIsSelectedThenAskForTheLength() {
+        String prompt = "> ";
+        String ask = "Enter the length of the rectangle:";
+        String result = ask + MessageUtil.LINE_BREAK + prompt;
+        assertEquals(result, messages.askForLength());
+    }
+
+    @Test
+    public void testWhenRectangleIsSelectedThenAskForTheWidth() {
+        String prompt = "> ";
+        String ask = "Enter the width of the rectangle:";
+        String result = ask + MessageUtil.LINE_BREAK + prompt;
+        assertEquals(result, messages.askForWidth());
+    }
+
 }

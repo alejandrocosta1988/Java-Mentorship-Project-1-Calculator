@@ -14,6 +14,10 @@ public class MessageToUser {
     private BmiMessage bmiMessage = new BmiMessage();
     private String selection = "Selected option: ";
     private String askForNumber = "Enter a number:";
+    private String askForRadius = "Enter the radius of the circle:";
+    private String askForSideLength = "Enter the length of the side of the square:";
+    private String askForRectangleLength = "Enter the length of the rectangle:";
+    private String askForRectangleWidth = "Enter the width of the rectangle:";
 
     public String printSelectedOption(int choice) {
         checkMainMenuOptions();
@@ -78,4 +82,31 @@ public class MessageToUser {
     }
 
 
+    public String askForRadius() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(askForRadius);
+        appendPrompt(builder);
+        return builder.toString();
+    }
+
+    public String askForSideLength() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(askForSideLength);
+        appendPrompt(builder);
+        return builder.toString();
+    }
+
+    public String askForLength() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(askForRectangleLength);
+        appendPrompt(builder);
+        return builder.toString();
+    }
+
+    public String askForWidth() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(askForRectangleWidth);
+        appendPrompt(builder);
+        return builder.toString();
+    }
 }

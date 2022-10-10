@@ -3,7 +3,9 @@ package app;
 import app.calculator.*;
 import app.messages.Menu;
 import app.messages.MessageToUser;
+import app.shapes.Circle;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -90,10 +92,15 @@ public class MainApp {
 
                 if (userOption == 3) {
                     AreaCalculator calculator = new AreaCalculator();
+                    Shape userShape;
                     System.out.println(messageToUser.printSelectedOption(userOption));
                     System.out.println(menu.getAreaCalculatorMenu());
                     System.out.print(menu.printPrompt());
                     int userAreaCalculatorOption = in.nextInt();
+
+                    if (userAreaCalculatorOption == 1) {
+                        System.out.println(messageToUser.askForRadius());
+                    }
 
                 }
 
