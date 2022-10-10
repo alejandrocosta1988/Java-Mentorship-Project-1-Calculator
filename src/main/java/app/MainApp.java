@@ -103,10 +103,14 @@ public class MainApp {
 
                     if (userAreaCalculatorOption == 1) {
                         System.out.print(messageToUser.askForRadius());
-                        double radius = in.nextDouble();
-                        userShape = new Circle(radius);
-                        calculator.changeShape(userShape);
-                        System.out.println(calculator.getResult());
+                        try {
+                            double radius = in.nextDouble();
+                            userShape = new Circle(radius);
+                            calculator.changeShape(userShape);
+                            System.out.println(calculator.getResult());
+                        } catch (IllegalArgumentException e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
 
                     if (userAreaCalculatorOption == 2) {
