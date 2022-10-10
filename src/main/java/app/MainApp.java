@@ -115,10 +115,14 @@ public class MainApp {
 
                     if (userAreaCalculatorOption == 2) {
                         System.out.print(messageToUser.askForSideLength());
-                        double userSideLength = in.nextDouble();
-                        userShape = new Square(userSideLength);
-                        calculator.changeShape(userShape);
-                        System.out.println(calculator.getResult());
+                        try {
+                            double userSideLength = in.nextDouble();
+                            userShape = new Square(userSideLength);
+                            calculator.changeShape(userShape);
+                            System.out.println(calculator.getResult());
+                        } catch (IllegalArgumentException e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
 
                     if (userAreaCalculatorOption == 3) {
