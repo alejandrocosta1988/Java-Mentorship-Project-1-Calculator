@@ -127,12 +127,16 @@ public class MainApp {
 
                     if (userAreaCalculatorOption == 3) {
                         System.out.print(messageToUser.askForLength());
-                        double userLength = in.nextDouble();
-                        System.out.print(messageToUser.askForWidth());
-                        double userWidth = in.nextDouble();
-                        userShape = new Rectangle(userLength, userWidth);
-                        calculator.changeShape(userShape);
-                        System.out.println(calculator.getResult());
+                        try {
+                            double userLength = in.nextDouble();
+                            System.out.print(messageToUser.askForWidth());
+                            double userWidth = in.nextDouble();
+                            userShape = new Rectangle(userLength, userWidth);
+                            calculator.changeShape(userShape);
+                            System.out.println(calculator.getResult());
+                        } catch (IllegalArgumentException e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
 
                 }
