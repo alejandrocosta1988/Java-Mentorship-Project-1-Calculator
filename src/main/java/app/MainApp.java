@@ -129,6 +129,11 @@ public class MainApp {
 
                 }
 
+                System.out.println("Do you wish to continue using the calculator? (y) or (n)");
+                String userWantsToContinue = in.next();
+                if (userWantsToContinue.equalsIgnoreCase("n") || userWantsToContinue.equalsIgnoreCase("No"))
+                    run = false;
+
             } catch (InputMismatchException e) {
                 System.out.println("You need to use a number from 1 to 3.");
             }
